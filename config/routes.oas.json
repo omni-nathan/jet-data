@@ -7,6 +7,7 @@
   "paths": {
     "/aircraft": {
       "get": {
+        "summary": "Get Aircraft Data",
         "x-zuplo-handler": {
           "export": "default",
           "module": "$import(./modules/get-aircraft)"
