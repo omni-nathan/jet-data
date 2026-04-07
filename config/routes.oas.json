@@ -1,14 +1,16 @@
 {
   "openapi": "3.1.0",
+  "info": {
+    "title": "Jet Data API",
+    "version": "1.0.0"
+  },
   "paths": {
     "/aircraft": {
       "get": {
-        "summary": "Search Aircraft",
-        "parameters": [
-          { "name": "type", "in": "query", "description": "Filter by aircraft type (e.g. Stealth, Fighter)", "schema": { "type": "string" } },
-          { "name": "min_year", "in": "query", "description": "Filter by minimum introduction year", "schema": { "type": "integer" } }
-        ],
-        "x-zuplo-handler": { "export": "default", "module": "$import(./modules/get-aircraft)" }
+        "x-zuplo-handler": {
+          "export": "default",
+          "module": "$import(./modules/get-aircraft)"
+        }
       }
     }
   }
