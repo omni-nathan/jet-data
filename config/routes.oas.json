@@ -1,23 +1,14 @@
 {
   "openapi": "3.1.0",
-  "info": {
-    "title": "US Military Aircraft API",
-    "version": "1.0.0"
-  },
   "paths": {
     "/aircraft": {
       "get": {
-        "summary": "Get all aircraft",
-        "operationId": "get-aircraft",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        },
-        "x-zuplo-handler": {
-          "export": "default",
-          "module": "$import(./modules/get-aircraft)"
-        }
+        "summary": "Search Aircraft",
+        "parameters": [
+          { "name": "type", "in": "query", "description": "Filter by aircraft type (e.g. Stealth, Fighter)", "schema": { "type": "string" } },
+          { "name": "min_year", "in": "query", "description": "Filter by minimum introduction year", "schema": { "type": "integer" } }
+        ],
+        "x-zuplo-handler": { "export": "default", "module": "$import(./modules/get-aircraft)" }
       }
     }
   }
