@@ -5,13 +5,25 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/aircraft": {
+    "/aircraft?type=bomber&min_year=1990": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
       "get": {
-        "summary": "Get Aircraft Data",
-        "x-zuplo-handler": {
-          "export": "default",
-          "module": "$import(./modules/get-aircraft)"
-        }
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "default",
+            "module": "$import(./modules/get-aircraft)",
+            "options": {}
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "new-route-faea83b9"
       }
     }
   }

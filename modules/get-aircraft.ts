@@ -1,7 +1,7 @@
 import { ZuploContext, ZuploRequest } from "@zuplo/runtime";
 
 export default async function (request: ZuploRequest, context: ZuploContext) {
-  const res = await fetch("https://raw.github.com/omni-nathan/jet-data/blob/main//aircraft.json");
+  const res = await fetch("https://raw.githubusercontent.com/omni-nathan/jet-data/main/aircraft.json");
   let data = await res.json();
   
   const { searchParams } = new URL(request.url);
